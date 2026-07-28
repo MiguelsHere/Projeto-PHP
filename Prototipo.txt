@@ -16,7 +16,7 @@ Calculadora de dormir (No login)
 
         views
     -Pagina inicial (homepage)
-    -
+    -Pagina de workouts
     -
     -
 
