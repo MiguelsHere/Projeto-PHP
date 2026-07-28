@@ -1,0 +1,53 @@
+Registar
+Login
+
+    Principal
+Estatisticas do perfil (Login)
+Exercicios (No Login)
+Workouts pre feitos (No login)
+Workouts criado pelo utilisador (Login)
+
+    Extras
+Calculadora de Calorias (No login)
+Calculadora de dormir (No login)
+
+
+
+
+        views
+    -Pagina inicial (default)
+    -
+    -
+    -
+
+
+        Base de dados -> db_workout
+
+    Tabelas
+user
+-id_user -> int(10) Primary key auto_increment
+-user_name -> varchar(100) not null
+-password -> (Fazer encriptação antes de guardar na base de dados)
+-created_in -> datetime dafault current_date
+-is_public -> bool not null (0/1)
+(user 0 vai ser o admin)
+
+exercise
+-id_exercise -> int(10) Primary key auto_increment
+-exercise_name -> varchar(100) not null
+-id_exercise_workout -> int(10)
+-exercise_descrition -> varchar(1000) not null
+-necessary_equipment -> varchar(1000)
+
+exercise_workout
+-id_exercise_workout -> int(10) Primary key
+-id_exercise -> int(10) foreing key
+-id_workout -> int(10) foreing key
+
+workout
+-id_workout -> int(10) Primary key auto_increment
+-id_user -> int(10) foreing key
+-id_exercise_workout -> int(10) foreing key
+-is_public -> bool not null (0/1)
+-views -> int(100) not null
+    
