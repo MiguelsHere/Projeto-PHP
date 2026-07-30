@@ -8,8 +8,9 @@
 </head>
 
 <body>
+    <nav></nav>
     <footer>
-        <p>criado por Miguel Monteiro</p>
+        <p>criado por <a href=""><strong>Miguel Monteiro</strong></a></p>
     </footer>
 </body>
 

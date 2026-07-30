@@ -15,11 +15,13 @@
     <main>
         <h2>Bem-Vindo ao<br>Workout Maker</h2>
         <h3>O que é o Workout maker?</h3>
-        <p>O Workout maker é uma aplicação web que dá ao utilizador todos os essencias para criar, encontrar, publicar e avaliar workouts!<br>
-            Encontre workouts efetivos de acordo com o seu nivel e equipamento disponivel tendo uma vasta base de dados de exercicsios para criar o seu proprio workout ou usar um workout feito pela comunidade!</p>
+        <p>
+            O Workout maker é uma aplicação web que dá ao utilizador todos os essencias para criar, encontrar, publicar e avaliar workouts!<br>
+            Encontre workouts efetivos de acordo com o seu nivel e equipamento disponivel tendo uma vasta base de dados de exercicsios para criar o seu proprio workout ou usar um workout feito pela comunidade!
+        </p>
     </main>
     <footer>
-        <p>criado por Miguel Monteiro</p>
+        <p>criado por <a href=""><strong>Miguel Monteiro</strong></a></p>
     </footer>
 </body>
 

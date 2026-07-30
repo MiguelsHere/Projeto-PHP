@@ -12,8 +12,8 @@ switch ($action) {
     case "register":
         $controller->register();
         break;
-    case "homepage":
+    case "home":
     default:
-        $controller->homepage();
+        $controller->home();
         break;
 }
