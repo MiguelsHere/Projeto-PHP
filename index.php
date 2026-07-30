@@ -6,8 +6,11 @@ $controller = new Controller();
 $action = $_GET['action'] ?? 'homepage';
 
 switch ($action) {
-    case 'create':
-        $controller->create();
+    case "login":
+        $controller->login();
+        break;
+    case "register":
+        $controller->register();
         break;
     case "homepage":
     default:
