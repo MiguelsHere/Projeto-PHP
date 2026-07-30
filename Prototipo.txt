@@ -31,6 +31,7 @@ user
 -user_name -> varchar(100) not null
 -password -> varchar(255) not null
 -email -> varchar(200) not null
+-user_description -> varchar (10000)
 -created_in -> datetime dafault current_date
 -is_public -> bool not null (0/1) default 0
 (user 0 vai ser o admin)
@@ -65,6 +66,7 @@ create table user(
     user_name varchar(100) NOT NULL,
     password varchar(255) NOT NULL,
     email varchar(200) NOT NULL,
+    user_description varcha(1000),
     created_in datetime DEFAULT CURRENT_DATE,
     is_public bool NOT NULL DEFAULT 0
 );
