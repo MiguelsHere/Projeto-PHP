@@ -1,5 +1,10 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
+  padding: 0;
 }
 
 main {
@@ -8,4 +13,9 @@ main {
 
 footer {
   text-align: center;
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+  background-color: black;
+  color: white;
 }
