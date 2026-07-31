@@ -3,7 +3,6 @@
 class Profile
 {
     private $conn;
-    private $table_name = "profile";
 
     public $id_profile;
     public $user_name;
@@ -20,7 +19,7 @@ class Profile
 
     public function readAll()
     {
-        $query = "SELECT user_name, created_in FROM " . $this->table_name . " WHERE is_public = 1  ORDER BY created_in DESC";
+        $query = "SELECT user_name, created_in FROM profile WHERE is_public = 1  ORDER BY created_in DESC";
         $stmt = $this->conn->prepare($query);
         $stmt->execute();
         return $stmt;
