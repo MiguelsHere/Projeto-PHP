@@ -8,10 +8,7 @@
 </head>
 
 <body>
-    <header>
-        <h1>Workout Maker</h1>
-    </header>
-    <nav></nav>
+    <nav><a href=""><img src="images/logo.png"></a></nav>
     <main>
         <h2>Bem-Vindo ao<br>Workout Maker</h2>
         <h3>O que é o Workout maker?</h3>

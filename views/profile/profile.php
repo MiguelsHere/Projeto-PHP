@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <nav></nav>
+    <nav><a href=""><img src="images/logo.png"></a></nav>
     <footer>
         <p>criado por <a href=""><strong>Miguel Monteiro</strong></a></p>
     </footer>
