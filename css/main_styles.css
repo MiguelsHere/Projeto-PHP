@@ -9,8 +9,9 @@ body {
 
 nav {
   padding: 2px;
-  width: 100%;
+  top: 0;
   position: fixed;
+  width: 100%;
   background-color: red;
 }
 
@@ -20,6 +21,7 @@ main {
 
 footer {
   text-align: center;
+  padding: 2px;
   bottom: 0;
   position: absolute;
   width: 100%;
