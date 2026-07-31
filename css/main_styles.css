@@ -7,6 +7,13 @@ body {
   padding: 0;
 }
 
+nav {
+  padding: 2px;
+  width: 100%;
+  position: fixed;
+  background-color: red;
+}
+
 main {
   text-align: center;
 }
@@ -14,7 +21,7 @@ main {
 footer {
   text-align: center;
   bottom: 0;
-  position: fixed;
+  position: absolute;
   width: 100%;
   background-color: black;
   color: white;

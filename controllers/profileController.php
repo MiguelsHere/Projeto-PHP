@@ -18,6 +18,6 @@ class ProfileController
     {
         $stmt = $this->profile->readAll();
         $profiles = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        include 'views/profile_list.php';
+        include 'views/profile/profile_list.php';
     }
 }
