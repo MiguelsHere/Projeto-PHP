@@ -11,7 +11,7 @@
     <header>
         <h1>Workout Maker</h1>
     </header>
-    <nav><a href="views/profile.php">Perfil</a></nav>
+    <nav></nav>
     <main>
         <h2>Bem-Vindo ao<br>Workout Maker</h2>
         <h3>O que é o Workout maker?</h3>

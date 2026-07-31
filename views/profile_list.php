@@ -8,6 +8,7 @@
 </head>
 
 <body>
+    <nav></nav>
     <table border="1" cellpadding="10" cellspacing="0" width="100%">
         <thead>
             <tr>
