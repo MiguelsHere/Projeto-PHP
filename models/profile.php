@@ -9,8 +9,6 @@ class Profile
     public $password;
     public $email;
     public $profile_description;
-    public $created_in;
-    public $is_public;
 
     public function __construct($db)
     {
