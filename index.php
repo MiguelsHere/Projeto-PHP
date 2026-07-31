@@ -6,6 +6,9 @@ $controller = new Controller();
 $action = $_GET['action'] ?? 'homepage';
 
 switch ($action) {
+    case "profile_index":
+        $controller->profile_index();
+        break;
     case "login":
         $controller->login();
         break;

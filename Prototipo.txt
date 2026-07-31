@@ -61,14 +61,14 @@ exercise_workout
 
 CREATE DATABASE workout_db
 
-create table user(
-    id_user int(10) PRIMARY KEY AUTO_INCREMENT,
+create table profile(
+    id_profile int(10) PRIMARY KEY AUTO_INCREMENT,
     user_name varchar(100) NOT NULL,
     password varchar(255) NOT NULL,
     email varchar(200) NOT NULL,
-    user_description varcha(1000),
+    profile_description varchar(1000),
     created_in datetime DEFAULT CURRENT_DATE,
-    is_public bool NOT NULL DEFAULT 0
+    is_public boolean NOT NULL DEFAULT 0
 );
 
 create table user_workout(

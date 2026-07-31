@@ -1,16 +1,23 @@
 <?php
 include_once 'config/database.php';
-include_once 'models/user.php';
+include_once 'models/profile.php';
 
 class Controller
 {
     private $db;
-    private $user;
+    private $profile;
 
     public function __construct()
     {
         $database = new Database();
         $this->db = $database->getConnection();
-        $this->user = new User($this->db);
+        $this->profile = new Profile($this->db);
+    }
+
+    public function profile_index()
+    {
+        $stmt = $this->profile->readAll();
+        $profiles = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        include 'views/profile_list.php';
     }
 }
