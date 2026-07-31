@@ -3,7 +3,7 @@ include_once 'controllers/controller.php';
 
 $controller = new Controller();
 
-$action = $_GET['action'] ?? 'homepage';
+$action = $_GET['action'] ?? 'home';
 
 switch ($action) {
     case "profile_index":
