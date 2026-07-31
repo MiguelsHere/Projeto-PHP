@@ -11,53 +11,20 @@ Workouts criado pelo utilisador (Login)
 Calculadora de Calorias (No login)
 Calculadora de dormir (No login)
 
-        views
-    -Pagina inicial (homepage)
+    views
+-Pagina inicial (home)
+-Pagina de ferramentas essencias (tools)
+-Perfil (profile)
     -Pagina de registo/login
-    -Pagina de workouts
     -
-    -
+-Pagina de workouts
+-
+-
 
 
     Hash da password: Argon2id
 recomedaçoes da OWASP
 Use Argon2id with a minimum configuration of 19 MiB of memory, an iteration count of 2, and 1 degree of parallelism.
-
-        Base de dados -> workout_db
-
-    Tabelas
-user
--id_user -> int(10) Primary key auto_increment
--user_name -> varchar(100) not null
--password -> varchar(255) not null
--email -> varchar(200) not null
--user_description -> varchar (10000)
--created_in -> datetime dafault current_date
--is_public -> bool not null (0/1) default 0
-(user 0 vai ser o admin)
-
-user_workout
--id_user_workout Primary key auto_increment
--id_user -> int(10) not null
--id_workout -> int(10) not null
--is_creator -> bool not null (0/1) default 0
-
-workout
--id_workout -> int(10) Primary key auto_increment
--created_in -> datetime dafault current_date
--is_public -> bool not null (0/1) default 0
-
-exercise
--id_exercise -> int(10) Primary key auto_increment
--exercise_name -> varchar(100) not null
--exercise_description -> varchar(1000) not null
--necessary_equipment -> varchar(1000)
-
-exercise_workout
--id_exercise_workout -> int(10) Primary key auto_increment
--id_exercise -> int(10) foreing key
--id_workout -> int(10) foreing key
-
 
 CREATE DATABASE workout_db
 
