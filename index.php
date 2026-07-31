@@ -1,7 +1,7 @@
 <?php
-include_once 'controllers/controller.php';
+include_once 'controllers/profileController.php';
 
-$controller = new Controller();
+$controller = new ProfileController();
 
 $action = $_GET['action'] ?? 'home';
 

@@ -2,7 +2,7 @@
 include_once 'config/database.php';
 include_once 'models/profile.php';
 
-class Controller
+class ProfileController
 {
     private $db;
     private $profile;
