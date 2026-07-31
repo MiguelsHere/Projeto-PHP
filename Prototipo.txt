@@ -62,7 +62,7 @@ exercise_workout
 CREATE DATABASE workout_db
 
 create table profile(
-    id_profile int(10) PRIMARY KEY AUTO_INCREMENT,
+    id_profile UNSIGNED int(10) PRIMARY KEY AUTO_INCREMENT,
     user_name varchar(100) NOT NULL,
     password varchar(255) NOT NULL,
     email varchar(200) NOT NULL,
@@ -72,28 +72,28 @@ create table profile(
 );
 
 create table user_workout(
-    id_user_workout int(10) PRIMARY KEY AUTO_INCREMENT,
+    id_user_workout UNSIGNED int(10) PRIMARY KEY AUTO_INCREMENT,
     id_user int(10) NOT NULL,
     id_workout int(10) NOT NULL,
-    is_creator bool NOT NULL DEFAULT 0
+    is_creator boolean NOT NULL DEFAULT 0
 );
 
 create table workout(
-    id_workout int(10) PRIMARY KEY AUTO_INCREMENT,
+    id_workout UNSIGNED int(10) PRIMARY KEY AUTO_INCREMENT,
     id_user int(10) NOT NULL,
     created_in datetime DEFAULT CURRENT_DATE,
     is_public bool NOT NULL DEFAULT 0
 );
 
 create table exercise(
-    id_exercise int(10) PRIMARY KEY AUTO_INCREMENT,
+    id_exercise UNSIGNED int(10) PRIMARY KEY AUTO_INCREMENT,
     exercise_name varchar(500) NOT NULL,
     exercise_description varchar(10000) NOT NULL,
     necessary_equipment
 );
 
 create table exercise_workout(
-    id_exercise_workout int(10) PRIMARY KEY AUTO_INCREMENT,
+    id_exercise_workout UNSIGNED int(10) PRIMARY KEY AUTO_INCREMENT,
     id_exercise int(10) NOT NULL,
     id_exercise_workout int(10) NOT NULL
 );
