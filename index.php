@@ -1,5 +1,5 @@
 <?php
-include_once 'controllers/profileController.php';
+include_once 'controllers/ProfileController.php';
 
 $controller = new ProfileController();
 
