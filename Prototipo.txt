@@ -30,13 +30,20 @@ CREATE DATABASE workout_db
 
 create table profile(
     id_profile UNSIGNED int(10) PRIMARY KEY AUTO_INCREMENT,
-    user_name varchar(100) NOT NULL,
+    user_name varchar(100) NOT NULL UNIQUE,
     password varchar(255) NOT NULL,
-    email varchar(200) NOT NULL,
+    email varchar(200) NOT NULL UNIQUE,
+    is_certified boolean NOT NULL DEFAULT 0,
+    certification_details varchar(1000),
     profile_description varchar(1000),
     created_in datetime DEFAULT CURRENT_DATE,
     is_public boolean NOT NULL DEFAULT 0
 );
+
+Depois adicionar a profile:
+    gender ,
+    weight ,
+    height ,
 
 create table user_workout(
     id_user_workout UNSIGNED int(10) PRIMARY KEY AUTO_INCREMENT,

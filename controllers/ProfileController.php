@@ -14,10 +14,31 @@ class ProfileController
         $this->profile = new Profile($this->db);
     }
 
+    public function home()
+    {
+        include 'views/home.php';
+    }
+
     public function profile_index()
     {
         $stmt = $this->profile->readAll();
         $profiles = $stmt->fetchAll(PDO::FETCH_ASSOC);
         include 'views/profile/profile_list.php';
     }
+
+    public function register()
+    {
+        if ($_POST) {
+            $this->profile->user_name = $_POST['user_name'];
+            $this->profile->email = $_POST['email'];
+            $this->profile->password = password_hash($_POST['password'], PASSWORD_ARGON2ID);
+
+            if ($this->profile->register()) {
+                header("Location: index.php");
+            }
+        }
+        include 'views/profile/profile_register.php';
+    }
+
+    public function Login() {}
 }
