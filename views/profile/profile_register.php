@@ -13,13 +13,13 @@
         <form action="index.php?action=register" method="post">
 
             <label>Nome do Perfil:</label><br>
-            <input type="text" name="user_name" required><br>
+            <input type="text" name="user_name" maxlength="100" required><br>
 
             <label>Email:</label><br>
-            <input type="email" name="email" required><br>
+            <input type="email" name="email" maxlength="320" required><br>
 
             <label>Palavra-Passe:</label><br>
-            <input type="password" name="password" required><br>
+            <input type="password" name="password" minlength="15" maxlength="64" required><br>
 
             <label>Confirmar Palavra-Passe:</label><br>
 
