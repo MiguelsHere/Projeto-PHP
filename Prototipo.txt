@@ -13,13 +13,14 @@ Calculadora de dormir (No login)
 
     views
 -Pagina inicial (home)
--Pagina de ferramentas essencias (tools)
--Perfil (profile)
-    -Pagina de registo/login
-    -
 -Pagina de workouts
--
--
+-Pagina de ferramentas essencias (tools)
+-Perfil (Pasta: profile)
+    -Pagina de registo (profile_register.php)
+    -Pagina de login (profile_login.php)
+    -Pagina de listar/procurar perfis (profile_list.php)
+    -Pagina de perfil (profile.php)
+
         Nome de utilisador
     Tamanho Maximo: 100
     Deixar os utilisadores usar o email para entrar como se fosse nome de utilisador.
@@ -37,7 +38,7 @@ CREATE DATABASE workout_db
 
 create table profile(
     id_profile int(10) UNSIGNED PRIMARY KEY AUTO_INCREMENT,
-    user_name varchar(100) NOT NULL,
+    user_name varchar(100) NOT NULL UNIQUE,
     password varchar(255) NOT NULL,
     email varchar(320) NOT NULL UNIQUE,
     gender enum('Female','Male','Other','Not Specified'),

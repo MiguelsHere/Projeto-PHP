@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <nav><a href=""><img src="images/logo.png"></a><a href="">Workouts</a></nav>
+    <nav><a href="index.php"><img src="images/logo.png"></a><a href="">Workouts</a></nav>
     <table border="1" cellpadding="10" cellspacing="0" width="100%">
         <thead>
             <tr>

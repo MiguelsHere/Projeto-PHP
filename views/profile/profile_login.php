@@ -4,28 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/main_styles.css">
-    <title>Workout Maker: Registar</title>
+    <title>Workout Maker: Entrar</title>
 </head>
 
 <body>
     <nav><a href="index.php"><img src="images/logo.png"></a><a href="">Workouts</a></nav>
     <main>
-        <form action="index.php?action=register" method="post">
+        <form action="index.php?action=login" method="post">
 
-            <label>Nome do Perfil:</label><br>
-            <input type="text" name="user_name" maxlength="100" required><br>
-
-            <label>Email:</label><br>
-            <input type="email" name="email" maxlength="320" required><br>
+            <label>Nome do Perfil ou Email:</label><br>
+            <input type="text" name="user_name" maxlength="320" required><br>
 
             <label>Palavra-passe:</label><br>
             <input type="password" name="password" minlength="15" maxlength="64" required><br>
 
-            <label>Confirmar Palavra-Passe:</label><br>
-
-            <button type="submit">Criar Perfil</button>
+            <button type="submit">Entrar</button>
             <a href="index.php">Cencelar</a>
-            
+
         </form>
     </main>
 

@@ -40,5 +40,11 @@ class ProfileController
         include 'views/profile/profile_register.php';
     }
 
-    public function Login() {}
+    public function login()
+    {
+        if ($_POST) {
+            $this->profile->password = $_POST['password'];
+        }
+        include 'views/profile/profile_login.php';
+    }
 }
