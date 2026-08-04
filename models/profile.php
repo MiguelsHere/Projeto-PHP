@@ -22,4 +22,9 @@ class Profile
         $stmt->execute();
         return $stmt;
     }
+
+    public function register()
+    {
+        
+    }
 }
