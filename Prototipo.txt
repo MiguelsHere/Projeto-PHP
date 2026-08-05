@@ -9,17 +9,25 @@ Workouts criado pelo utilisador (Login)
 
     Extras
 Calculadora de Calorias (No login)
+Preparo de Plano de Alimentação
 Calculadora de dormir (No login)
 
-    views
+    Views
 -Pagina inicial (home)
--Pagina de workouts
--Pagina de ferramentas essencias (tools)
 -Perfil (Pasta: profile)
     -Pagina de registo (profile_register.php)
     -Pagina de login (profile_login.php)
     -Pagina de listar/procurar perfis (profile_list.php)
-    -Pagina de perfil (profile.php)
+    -Pagina de perfil proprio (profile.php)
+-Workouts
+    -Pagina de procurar workouts
+    -Pagina de criar workouts
+    -Pagina de editar workouts
+    -Pagina de workouts proprios
+-Ferramentas Essencias (tools)
+    -Calculadora de Calorias
+    -Calculadora de Dormir
+
 
         Nome de utilisador
     Tamanho Maximo: 100
