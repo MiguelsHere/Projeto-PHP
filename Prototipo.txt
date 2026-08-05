@@ -27,12 +27,15 @@ Calculadora de dormir (No login)
 
         Email
     Tamanho Maximo: 320
+    Se o utilisador quer mudar o email tem que inserir a palavra-passe
 
-        Password
+        Palavra-passe
 Recomedaçoes da OWASP
     Tamanho Minimo: 15
     Tamanho Maximo: 64
     Hash: Argon2id
+    Se o utilisador quer mudar a palavra-passe tem que a inserir primeiro
+    Se o utilisador se esqueceu
 
 CREATE DATABASE workout_db
 
@@ -41,7 +44,7 @@ create table profile(
     user_name varchar(100) NOT NULL UNIQUE,
     password varchar(255) NOT NULL,
     email varchar(320) NOT NULL UNIQUE,
-    gender enum('Female','Male','Other','Not Specified'),
+    gender enum('Female','Male','Other','Not Specified') NOT NULL DEFAULT 'Not Specified',
     weight DECIMAL(5,2),
     height DECIMAL(5,2),
     is_certified boolean NOT NULL DEFAULT 0,
