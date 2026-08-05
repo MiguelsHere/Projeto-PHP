@@ -42,6 +42,7 @@ Recomedaçoes da OWASP
     Tamanho Minimo: 15
     Tamanho Maximo: 64
     Hash: Argon2id
+    Utilizar zxcvbn-php para mostrar ao utilisador quão forte é a palavra-passe
     Se o utilisador quer mudar a palavra-passe tem que a inserir primeiro
     Se o utilisador se esqueceu
 
