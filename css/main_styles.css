@@ -12,11 +12,28 @@ nav {
   top: 0;
   position: fixed;
   width: 100%;
-  background-color: red;
+  background-color: black;
+  color: white;
 }
 
 nav a {
   text-decoration: none;
+}
+
+nav a:link {
+  color: white;
+}
+
+nav a:visited {
+  color: white;
+}
+
+nav a:hover {
+  background-color: red;
+}
+
+nav a:active {
+  color: white;
 }
 
 main {

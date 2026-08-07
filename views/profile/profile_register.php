@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/main_styles.css">
-    <link rel="icon" type="images/x-icon" href="/images/favicon.ico">
+    <link rel="icon" type="images/x-icon" href="images/favicon.ico">
     <title>Workout Maker: Registar</title>
 </head>
 
@@ -17,7 +17,7 @@
             <input type="text" name="user_name" maxlength="100" required><br>
 
             <label>Email:</label><br>
-            <input type="email" name="email" maxlength="320" required><br>
+            <input type="email" name="email" maxlength="252" required><br>
 
             <label>Palavra-passe:</label><br>
             <input type="password" name="password" minlength="15" maxlength="64" required><br>

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/main_styles.css">
-    <link rel="icon" type="images/x-icon" href="/images/favicon.ico">
+    <link rel="icon" type="images/x-icon" href="images/favicon.ico">
     <title>Workout Maker: Entrar</title>
 </head>
 
@@ -14,7 +14,7 @@
         <form action="index.php?action=login" method="post">
 
             <label>Nome do Perfil ou Email:</label><br>
-            <input type="text" name="user_name" maxlength="320" required><br>
+            <input type="text" name="user_name" maxlength="254" required><br>
 
             <label>Palavra-passe:</label><br>
             <input type="password" name="password" minlength="15" maxlength="64" required><br>
