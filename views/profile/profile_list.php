@@ -31,7 +31,7 @@
         </tbody>
     </table>
     <footer>
-        <p>criado por <a href="">Miguel Monteiro</a></p>
+        <p>criado por <a href="" target="_blank">Miguel Monteiro</a></p>
     </footer>
 </body>
 
