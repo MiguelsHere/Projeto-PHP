@@ -28,3 +28,22 @@ footer {
   background-color: black;
   color: white;
 }
+
+footer a {
+  font-weight: bold;
+}
+
+footer a:link {
+  color: white;
+  font-weight: bold;
+}
+
+footer a:visited {
+  color: white;
+  font-weight: bold;
+}
+
+footer a:hover {
+  color: red;
+  font-weight: bold;
+}
