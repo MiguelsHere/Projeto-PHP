@@ -3,8 +3,9 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Workout Maker: Perfis</title>
     <link rel="stylesheet" href="css/main_styles.css">
+    <link rel="icon" type="images/x-icon" href="/images/favicon.ico">
+    <title>Workout Maker: Perfis</title>
 </head>
 
 <body>

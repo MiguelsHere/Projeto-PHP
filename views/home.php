@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/main_styles.css">
+    <link rel="icon" type="images/x-icon" href="/images/favicon.ico">
     <title>Workout Maker: Pagina Principal</title>
 </head>
 

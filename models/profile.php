@@ -4,11 +4,9 @@ class Profile
 {
     private $conn;
 
-    public $id_profile;
     public $user_name;
     public $password;
     public $email;
-    public $profile_description;
 
     public function __construct($db)
     {
@@ -25,6 +23,20 @@ class Profile
 
     public function register()
     {
-        
+        $hash = password_hash($this->password, PASSWORD_ARGON2ID);
+
+        $query = "INSERT INTO profile(user_name, password, email) VALUES(:user_name, :password, :email)";
+        $stmt = $this->conn->prepare($query);
+
+        $stmt->bindParam(":user_name", $this->user_name);
+        $stmt->bindParam(":email", $this->email);
+        $stmt->bindParam(":password", $hash);
+
+        return $stmt->execute();
+    }
+
+    public function login()
+    {
+        $query = "";
     }
 }

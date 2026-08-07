@@ -31,7 +31,7 @@ class ProfileController
         if ($_POST) {
             $this->profile->user_name = $_POST['user_name'];
             $this->profile->email = $_POST['email'];
-            $this->profile->password = password_hash($_POST['password'], PASSWORD_ARGON2ID);
+            $this->profile->password = $_POST['password'];
 
             if ($this->profile->register()) {
                 header("Location: index.php");
