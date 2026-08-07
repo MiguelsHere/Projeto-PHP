@@ -15,6 +15,10 @@ nav {
   background-color: red;
 }
 
+nav a {
+  text-decoration: none;
+}
+
 main {
   text-align: center;
 }
