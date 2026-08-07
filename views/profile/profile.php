@@ -11,7 +11,7 @@
 <body>
     <nav><a href="index.php"><img src="images/logo.png"></a><a href="">Workouts</a></nav>
     <footer>
-        <p>criado por <a href="" target="_blank">Miguel Monteiro</a></p>
+        <p>criado por <a href="" target="_blank" rel="author">Miguel Monteiro</a></p>
     </footer>
 </body>
 
