@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <nav><a href=""><img src="images/logo.png" alt="Workout Maker"></a><a href="">Workouts</a><a href="">Ferramentas</a><a href="">Perfil</a></nav>
+    <nav><a href=""><img src="images/logo.png" alt="Workout Maker"></a> <a href="">Workouts</a> <a href="">Ferramentas</a> <a href="">Perfil</a></nav>
     <main>
         <form action="index.php?action=register" method="post">
 
@@ -26,7 +26,7 @@
 
             <button type="submit">Criar Perfil</button>
             <a href="index.php">Cencelar</a>
-            
+
         </form>
     </main>
 

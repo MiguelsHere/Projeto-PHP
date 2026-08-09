@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <nav><a href=""><img src="images/logo.png" alt="Workout Maker"></a><a href="">Workouts</a><a href="">Ferramentas</a><a href="">Perfil</a></nav>
+    <nav><a href=""><img src="images/logo.png" alt="Workout Maker"></a> <a href="">Workouts</a> <a href="">Ferramentas</a> <a href="">Perfil</a></nav>
     <table border="1" cellpadding="10" cellspacing="0" width="100%">
         <thead>
             <tr>
