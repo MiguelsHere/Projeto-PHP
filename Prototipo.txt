@@ -24,7 +24,7 @@ Calculadora de dormir (No login)
     -Pagina de criar workouts
     -Pagina de editar workouts
     -Pagina de workouts proprios
--Ferramentas Essencias (tools)
+-Ferramentas Essencias (Pasta: tools)
     -Calculadora de Calorias
     -Calculadora de Dormir
 

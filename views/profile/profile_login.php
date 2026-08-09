@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <nav><a href="index.php"><img src="images/logo.png"></a><a href="">Workouts</a></nav>
+    <nav><a href=""><img src="images/logo.png" alt="Workout Maker"></a><a href="">Workouts</a><a href="">Ferramentas</a><a href="">Perfil</a></nav>
     <main>
         <form action="index.php?action=login" method="post">
 

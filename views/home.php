@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <nav><a href=""><img src="images/logo.png"></a><a href="">Workouts</a></nav>
+    <nav><a href=""><img src="images/logo.png" alt="Workout Maker"></a><a href="">Workouts</a><a href="">Ferramentas</a><a href="">Perfil</a></nav>
     <main>
         <h2>Bem-Vindo ao<br>Workout Maker</h2>
         <h3>O que é o Workout maker?</h3>
