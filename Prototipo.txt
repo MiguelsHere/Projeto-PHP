@@ -9,8 +9,8 @@ Workouts criado pelo utilisador (Login)
 
     Extras
 Calculadora de Calorias (No login)
-Preparo de Plano de Alimentação
 Calculadora de dormir (No login)
+Preparo de Plano de Alimentação
 
     Views
 -Pagina inicial (home)
@@ -61,6 +61,7 @@ create table profile(
     gender enum('Female','Male','Other','Not Specified') NOT NULL DEFAULT 'Not Specified',
     weight DECIMAL(4,1),
     height DECIMAL(3,2),
+    has_equipment SET(),
     is_certified boolean NOT NULL DEFAULT 0,
     certification_details varchar(1000),
     profile_description varchar(1000),
