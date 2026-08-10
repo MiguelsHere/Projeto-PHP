@@ -61,11 +61,11 @@ create table profile(
     gender enum('Female','Male','Other','Not Specified') NOT NULL DEFAULT 'Not Specified',
     weight DECIMAL(4,1),
     height DECIMAL(3,2),
-    has_equipment SET(),
+    equipment SET(),
     is_certified boolean NOT NULL DEFAULT 0,
     certification_details varchar(1000),
     profile_description varchar(1000),
-    created_in datetime DEFAULT CURRENT_TIMESTAMP,
+    created_at datetime DEFAULT CURRENT_TIMESTAMP,
     is_public boolean NOT NULL DEFAULT 0
 );
 
@@ -79,8 +79,7 @@ create table profile_workout(
 create table workout(
     id_workout bigint(10) UNSIGNED PRIMARY KEY AUTO_INCREMENT,
     workout_name varchar(1000) NOT NULL,
-    necessary_equipment SET(),
-    created_in datetime DEFAULT CURRENT_TIMESTAMP,
+    created_at datetime DEFAULT CURRENT_TIMESTAMP,
     is_public bool NOT NULL DEFAULT 0
 );
 

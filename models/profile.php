@@ -7,6 +7,14 @@ class Profile
     public $user_name;
     public $password;
     public $email;
+    
+    public $age;
+    public $gender;
+    public $weight;
+    public $height;
+    public $equipment;
+    public $description;
+    public $is_public;
 
     public function __construct($db)
     {
@@ -38,5 +46,10 @@ class Profile
     public function login()
     {
         $query = "";
+    }
+
+    public function update_no_auth()
+    {
+        
     }
 }

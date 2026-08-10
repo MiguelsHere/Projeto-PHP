@@ -15,7 +15,7 @@
         <form action="index.php?action=login" method="post">
 
             <label>Nome do Perfil ou Email:</label><br>
-            <input type="text" name="user_name_or_email" maxlength="254" required><br>
+            <input type="text" name="user_or_email" maxlength="254" required><br>
 
             <label>Palavra-passe:</label><br>
             <input type="password" name="password" minlength="15" maxlength="64" required><br>
