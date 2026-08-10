@@ -78,15 +78,15 @@ create table profile_workout(
 create table workout(
     id_workout bigint(10) UNSIGNED PRIMARY KEY AUTO_INCREMENT,
     workout_name varchar(1000) NOT NULL,
+    necessary_equipment SET(),
     created_in datetime DEFAULT CURRENT_TIMESTAMP,
     is_public bool NOT NULL DEFAULT 0
 );
 
 create table workout_exercise(
     id_workout_exercise bigint(10) UNSIGNED PRIMARY KEY AUTO_INCREMENT,
-    id_workout bigint(10) UNSIGNED NOT NULL
-    id_exercise bigint(10) UNSIGNED NOT NULL,
-    
+    id_workout bigint(10) UNSIGNED NOT NULL,
+    id_exercise bigint(10) UNSIGNED NOT NULL
 );
 
 create table exercise(
