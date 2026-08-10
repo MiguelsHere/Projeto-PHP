@@ -59,8 +59,8 @@ create table profile(
     email varchar(254) NOT NULL UNIQUE,
     age smallint(3) UNSIGNED,
     gender enum('Female','Male','Other','Not Specified') NOT NULL DEFAULT 'Not Specified',
-    weight DECIMAL(5,2),
-    height DECIMAL(5,2),
+    weight DECIMAL(4,1),
+    height DECIMAL(3,2),
     is_certified boolean NOT NULL DEFAULT 0,
     certification_details varchar(1000),
     profile_description varchar(1000),
@@ -68,29 +68,30 @@ create table profile(
     is_public boolean NOT NULL DEFAULT 0
 );
 
-create table user_workout(
-    id_user_workout UNSIGNED int(10) PRIMARY KEY AUTO_INCREMENT,
-    id_user int(10) NOT NULL,
-    id_workout int(10) NOT NULL,
+create table profile_workout(
+    id_profile_workout bigint(10) UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+    id_profile bigint(10) UNSIGNED NOT NULL,
+    id_workout bigint(10) UNSIGNED NOT NULL,
     is_creator boolean NOT NULL DEFAULT 0
 );
 
 create table workout(
-    id_workout UNSIGNED int(10) PRIMARY KEY AUTO_INCREMENT,
-    id_user int(10) NOT NULL,
-    created_in datetime DEFAULT CURRENT_DATE,
+    id_workout bigint(10) UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+    workout_name varchar(1000) NOT NULL,
+    created_in datetime DEFAULT CURRENT_TIMESTAMP,
     is_public bool NOT NULL DEFAULT 0
 );
 
-create table exercise(
-    id_exercise UNSIGNED int(10) PRIMARY KEY AUTO_INCREMENT,
-    exercise_name varchar(500) NOT NULL,
-    exercise_description varchar(10000) NOT NULL,
-    necessary_equipment
+create table workout_exercise(
+    id_workout_exercise bigint(10) UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+    id_workout bigint(10) UNSIGNED NOT NULL
+    id_exercise bigint(10) UNSIGNED NOT NULL,
+    
 );
 
-create table exercise_workout(
-    id_exercise_workout UNSIGNED int(10) PRIMARY KEY AUTO_INCREMENT,
-    id_exercise int(10) NOT NULL,
-    id_exercise_workout int(10) NOT NULL
+create table exercise(
+    id_exercise bigint(10) UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+    exercise_name varchar(500) NOT NULL,
+    exercise_description varchar(1000) NOT NULL,
+    necessary_equipment SET()
 );
