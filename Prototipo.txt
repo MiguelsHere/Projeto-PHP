@@ -17,13 +17,13 @@ Calculadora de dormir (No login)
 -Perfil (Pasta: profile)
     -Pagina de registo (profile_register.php)
     -Pagina de login (profile_login.php)
-    -Pagina de listar/procurar perfis (profile_list.php)
     -Pagina de perfil proprio (profile.php)
--Workouts
-    -Pagina de procurar workouts
-    -Pagina de criar workouts
-    -Pagina de editar workouts
+    -Pagina de listar/procurar perfis (profile_list.php)
+-Workouts (Pasta: workout)
     -Pagina de workouts proprios
+    -Pagina de criar workouts
+    -Pagina de procurar workouts
+    -Pagina de editar workouts
 -Ferramentas Essencias (Pasta: tools)
     -Calculadora de Calorias
     -Calculadora de Dormir
@@ -57,6 +57,7 @@ create table profile(
     user_name varchar(100) NOT NULL UNIQUE,
     password varchar(255) NOT NULL,
     email varchar(254) NOT NULL UNIQUE,
+    age smallint(3) UNSIGNED,
     gender enum('Female','Male','Other','Not Specified') NOT NULL DEFAULT 'Not Specified',
     weight DECIMAL(5,2),
     height DECIMAL(5,2),
