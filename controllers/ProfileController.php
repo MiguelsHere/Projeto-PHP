@@ -43,6 +43,8 @@ class ProfileController
     public function login()
     {
         if ($_POST) {
+            $this->profile->user_name = $_POST['user_name_or_email'];
+            $this->profile->email = $_POST['user_name_or_email'];
             $this->profile->password = $_POST['password'];
         }
         include 'views/profile/profile_login.php';
