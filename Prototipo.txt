@@ -61,10 +61,10 @@ create table profile(
     gender enum('Female','Male','Other','Not Specified') NOT NULL DEFAULT 'Not Specified',
     weight DECIMAL(4,1),
     height DECIMAL(3,2),
-    equipment SET(),
+    equipment SET('Bench', 'Bands', 'Weight Plates', 'Barbell', 'Dumbell', 'Kettlebell', 'Pull-Up Bar', 'Ab Wheel'),
+    profile_description varchar(1000),
     is_certified boolean NOT NULL DEFAULT 0,
     certification_details varchar(1000),
-    profile_description varchar(1000),
     created_at datetime DEFAULT CURRENT_TIMESTAMP,
     is_public boolean NOT NULL DEFAULT 0
 );
@@ -73,15 +73,22 @@ create table profile_workout(
     id_profile_workout bigint(10) UNSIGNED PRIMARY KEY AUTO_INCREMENT,
     id_profile bigint(10) UNSIGNED NOT NULL,
     id_workout bigint(10) UNSIGNED NOT NULL,
-    is_creator boolean NOT NULL DEFAULT 0
+    is_creator boolean NOT NULL DEFAULT 0,
+    rating tinyint(1) UNSIGNED
 );
 
 create table workout(
     id_workout bigint(10) UNSIGNED PRIMARY KEY AUTO_INCREMENT,
     workout_name varchar(1000) NOT NULL,
+    muscles_worked SET('Calves', 'Quadriceps', 'Hamstrings', 'Glutes') NOT NULL,
+    time_needed smallint(3) UNSIGNED,
     created_at datetime DEFAULT CURRENT_TIMESTAMP,
     is_public bool NOT NULL DEFAULT 0
 );
+
+Depois ver:
+goal ENUM('Strength', 'Muscle Building', 'Cardio', 'Flexibility & Mobility', 'HIIT', 'Warm up', 'Cooldown') NOT NULL,
+
 
 create table workout_exercise(
     id_workout_exercise bigint(10) UNSIGNED PRIMARY KEY AUTO_INCREMENT,
