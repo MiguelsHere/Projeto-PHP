@@ -74,7 +74,7 @@ class Profile
                 return true;
             }
         }
-        else return $stmt->execute();
+        return $stmt->execute();
     }
 
     public function update_no_auth()
