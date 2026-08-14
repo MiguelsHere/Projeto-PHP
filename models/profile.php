@@ -34,6 +34,8 @@ class Profile
     //Depois fazer algo com session para os returns
     public function register()
     {
+        $this->user_name = trim($this->user_name,);
+        
         if (strlen($this->user_name) > 50 || strlen($this->user_name) < 1){
             return false;
         }
