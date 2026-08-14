@@ -1,5 +1,3 @@
-Registar
-Login
 
     Principal
 Estatisticas do perfil (Login)
@@ -31,15 +29,12 @@ Preparo de Plano de Alimentação
 Recomedaçoes da OWASP
 
         Nome de utilisador
-    Tamanho Maximo: 100
+    Tamanho Minimo: 1
+    Tamanho Maximo: 50
     Deixar os utilisadores usar o email para entrar como se fosse nome de utilisador.
 
         Email
     Tamanho Maximo: 254
-    Contem duas partes separadas por @
-    Parte Local(antes do @): 63
-    Não pode conter ` “ ” " " ‘ ’ ' ' ou null bytes
-    Parte Dominio tem apenas letras, numeros, hifens e pontos
     Se o utilisador quer mudar o email tem que inserir a palavra-passe
 
         Palavra-passe
@@ -54,10 +49,10 @@ CREATE DATABASE workout_db
 
 create table profile(
     id_profile bigint(10) UNSIGNED PRIMARY KEY AUTO_INCREMENT,
-    user_name varchar(100) NOT NULL UNIQUE,
+    user_name varchar(50) NOT NULL UNIQUE,
     password varchar(255) NOT NULL,
     email varchar(254) NOT NULL UNIQUE,
-    age smallint(3) UNSIGNED,
+    date_birth date,
     gender enum('Female','Male','Other','Not Specified') NOT NULL DEFAULT 'Not Specified',
     weight DECIMAL(4,1),
     height DECIMAL(3,2),

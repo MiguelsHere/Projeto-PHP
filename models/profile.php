@@ -34,7 +34,19 @@ class Profile
     //Depois fazer algo com session para os returns
     public function register()
     {
-        $query = "SELECT user_name, email from profile where user_name = :user_name or email = :email";
+        if (strlen($this->user_name) > 50 || strlen($this->user_name) < 1){
+            return false;
+        }
+
+        if (!filter_var($this->email, FILTER_VALIDATE_EMAIL)) {
+            return false;
+        }
+
+        if (strlen($this->password) > 64 || strlen($this->password) < 15){
+            return false;
+        }
+
+        $query = "SELECT user_name, email FROM profile WHERE user_name = :user_name or email = :email";
         $stmt = $this->conn->prepare($query);
 
         $stmt->bindParam(":user_name", $this->user_name);
