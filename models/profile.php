@@ -61,7 +61,7 @@ class Profile
 
         $hash = password_hash($this->password, PASSWORD_ARGON2ID);
 
-        $query = "INSERT INTO profile(user_name, password, email) VALUES(:user_name, :password, :email)";
+        $query = "INSERT INTO profile(user_name, password_hash, email) VALUES(:user_name, :password, :email)";
         $stmt = $this->conn->prepare($query);
 
         $stmt->bindParam(":user_name", $this->user_name);
