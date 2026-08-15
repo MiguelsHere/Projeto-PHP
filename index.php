@@ -1,7 +1,7 @@
 <?php
-include_once 'controllers/ProfileController.php';
-
 session_start();
+
+include_once 'controllers/ProfileController.php';
 
 $controller = new ProfileController();
 
