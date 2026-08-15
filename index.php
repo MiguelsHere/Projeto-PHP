@@ -1,6 +1,8 @@
 <?php
 include_once 'controllers/ProfileController.php';
 
+session_start();
+
 $controller = new ProfileController();
 
 $action = $_GET['action'] ?? 'home';
