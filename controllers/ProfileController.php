@@ -36,7 +36,7 @@ class ProfileController
             if ($this->profile->register()) {
                 header("Location: index.php");
             } else {
-                $_SESSION['error'] = 'Registo Falhou. Email ou nome de perfil já existe.';
+                $_SESSION['error'] = 'Registo Falhou. Email ou nome já existe.';
                 header("Location: index.php");
             }
         }
