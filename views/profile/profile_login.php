@@ -13,6 +13,14 @@
 <body>
     <nav><a href=""><img src="images/logo.png" alt="Workout Maker"></a> <a href="">Workouts</a> <a href="">Ferramentas</a> <a href="">Perfil</a></nav>
     <main>
+        <?php
+
+        if ($_SESSION['error']) {
+            echo "<p>" . htmlspecialchars($_SESSION['error']) . "</p>";
+            unset($_SESSION['error']);
+        }
+
+        ?>
         <form action="index.php?action=login" method="post">
 
             <label>Nome do Perfil ou Email:</label><br>
@@ -25,6 +33,9 @@
             <a href="index.php">Cencelar</a>
 
         </form>
+
+
+
     </main>
 
     <footer>

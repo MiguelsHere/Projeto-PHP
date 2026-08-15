@@ -35,6 +35,9 @@ class ProfileController
 
             if ($this->profile->register()) {
                 header("Location: index.php");
+            } else {
+                $_SESSION['error'] = 'Registo Falhou. Email ou nome de perfil já existe.';
+                header("Location: index.php");
             }
         }
         include 'views/profile/profile_register.php';
@@ -46,8 +49,11 @@ class ProfileController
             $this->profile->user_name = $_POST['user_or_email'];
             $this->profile->email = $_POST['user_or_email'];
             $this->profile->password = $_POST['password'];
-            
+
             if ($this->profile->login()) {
+                header("Location: index.php");
+            } else {
+                $_SESSION['error'] = 'Login Falhou. Tente Novamente.';
                 header("Location: index.php");
             }
         }
@@ -56,7 +62,7 @@ class ProfileController
 
     public function update_no_auth()
     {
-        if ($_POST){
+        if ($_POST) {
             $this->profile->age = $_POST['age'];
             $this->profile->gender = $_POST['gender'];
             $this->profile->weight = $_POST['weight'];

@@ -6,6 +6,7 @@ $controller = new ProfileController();
 $action = $_GET['action'] ?? 'home';
 
 switch ($action) {
+
     case "profile_index":
         $controller->profile_index();
         break;
