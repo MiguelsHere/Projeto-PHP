@@ -33,7 +33,7 @@
             <a href="index.php">Cancelar</a>
 
         </form>
-
+        <a href="index.php?action=password_reset">Esqueceu-se da Palavra-passe?</a>
     </main>
 
     <footer>

@@ -17,6 +17,7 @@ Preparo de Plano de Alimentação
     -Pagina de login (profile_login.php)
     -Pagina de perfil proprio (profile.php)
     -Pagina de listar/procurar perfis (profile_list.php)
+    -Pagina de repor palavra-passe (profile_password_reset.php)
 -Workouts (Pasta: workout)
     -Pagina de workouts proprios
     -Pagina de criar workouts

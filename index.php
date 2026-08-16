@@ -12,6 +12,9 @@ switch ($action) {
     case "profile_index":
         $controller->profile_index();
         break;
+    case "password":
+        $controller->password_reset();
+        break;
     case "login":
         $controller->login();
         break;

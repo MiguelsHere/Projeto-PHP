@@ -37,7 +37,7 @@ class ProfileController
                 header("Location: index.php");
             } else {
                 $_SESSION['error'] = 'Registo Falhou. Email ou nome já existe.';
-                header("Location: index.php");
+                header("Location: index.php?action=register");
             }
         }
         include 'views/profile/profile_register.php';
@@ -54,10 +54,23 @@ class ProfileController
                 header("Location: index.php");
             } else {
                 $_SESSION['error'] = 'Login Falhou. Tente Novamente.';
-                header("Location: index.php");
+                header("Location: index.php?action=login");
             }
         }
         include 'views/profile/profile_login.php';
+    }
+
+    public function password_reset() {
+
+        if ($_POST) {
+            $this->profile->email = $_POST['email'];
+
+            if ($this->profile->password_reset()) {
+                header("Location: index.php");
+            }
+        }
+
+        include 'views/profile/profile_password_reset.php';
     }
 
     public function update_no_auth()
