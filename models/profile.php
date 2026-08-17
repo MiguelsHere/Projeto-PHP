@@ -7,7 +7,7 @@ class Profile
     public $user_name;
     public $password;
     public $email;
-    
+
     public $age;
     public $gender;
     public $weight;
@@ -34,19 +34,20 @@ class Profile
     //Depois fazer algo com session para os returns
     public function register()
     {
+        if (!isset($this->user_name)) {
+            $this->user_name = '';
+        }
+
+        if (!isset($this->email)) {
+            $this->email = '';
+        }
+
+        if (!isset($this->password)) {
+            $this->password = '';
+        }
+
         $this->user_name = trim($this->user_name);
-
-        if (strlen($this->user_name) > 50 || strlen($this->user_name) < 1){
-            return false;
-        }
-
-        if (!filter_var($this->email, FILTER_VALIDATE_EMAIL)) {
-            return false;
-        }
-
-        if (strlen($this->password) > 64 || strlen($this->password) < 15){
-            return false;
-        }
+        $this->email = trim($this->email);
 
         $query = "SELECT user_name, email FROM profile WHERE user_name = :user_name or email = :email";
         $stmt = $this->conn->prepare($query);
@@ -54,8 +55,8 @@ class Profile
         $stmt->bindParam(":user_name", $this->user_name);
         $stmt->bindParam(":email", $this->email);
         $stmt->execute();
-        
-        if($stmt->rowCount() > 0) {
+
+        if ($stmt->rowCount() > 0 | mb_strlen($this->user_name) > 50 | mb_strlen($this->user_name) < 1 | !filter_var($this->email, FILTER_VALIDATE_EMAIL) | mb_strlen($this->email) > 254 | mb_strlen($this->password) > 64 | mb_strlen($this->password) < 15) {
             return false;
         }
 
@@ -73,7 +74,10 @@ class Profile
 
     public function login()
     {
-        $query = "SELECT password FROM profile WHERE user_name = :user_name OR email = :email";
+        $this->user_name = trim($this->user_name);
+        $this->email = trim($this->email);
+
+        $query = "SELECT password_hash FROM profile WHERE user_name = :user_name OR email = :email";
         $stmt = $this->conn->prepare($query);
 
         $stmt->bindParam(":user_name", $this->user_name);
@@ -81,18 +85,15 @@ class Profile
 
         if ($stmt->execute()) {
 
-        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+            $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
-            if ($row && password_verify($this->password, $row['password'])) {
+            if ($row && password_verify($this->password, $row['password_hash'])) {
 
                 return true;
             }
         }
-        return $stmt->execute();
+        return false;
     }
 
-    public function update_no_auth()
-    {
-        
-    }
+    public function update_no_auth() {}
 }

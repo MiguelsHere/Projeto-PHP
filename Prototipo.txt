@@ -46,7 +46,7 @@ Recomedaçoes da OWASP
     Se o utilisador quer mudar a palavra-passe tem que a inserir primeiro
     Se o utilisador se esqueceu
 
-CREATE DATABASE workout_db
+CREATE DATABASE workout_db;
 
 create table profile(
     id_profile bigint(10) UNSIGNED PRIMARY KEY AUTO_INCREMENT,
@@ -55,8 +55,8 @@ create table profile(
     email varchar(254) NOT NULL UNIQUE,
     date_birth date,
     gender enum('Female','Male','Other','Not Specified') NOT NULL DEFAULT 'Not Specified',
-    weight DECIMAL(4,1),
-    height DECIMAL(4,1),
+    weight_kg DECIMAL(4,1),
+    height_cm DECIMAL(4,1),
     equipment SET('Bench', 'Bands', 'Weight Plates', 'Barbell', 'Dumbell', 'Kettlebell', 'Pull-Up Bar', 'Ab Wheel'),
     profile_description varchar(1000),
     is_certified boolean NOT NULL DEFAULT 0,
@@ -78,8 +78,9 @@ create table profile_workout(
 create table workout(
     id_workout bigint(10) UNSIGNED PRIMARY KEY AUTO_INCREMENT,
     workout_name varchar(1000) NOT NULL,
-    muscles_worked SET('Calves', 'Quadriceps', 'Hamstrings', 'Glutes') NOT NULL,
-    time_needed smallint(3) UNSIGNED,
+    workout_description varchar(1000),
+    muscles_worked SET('Forearms', 'Biceps', 'Triceps', 'Shoulders', 'Back', 'Chest', 'Abs', 'Glutes', 'Quadriceps', 'Hamstrings', 'Calves') NOT NULL,
+    time_needed_min smallint(3) UNSIGNED,
     created_at datetime DEFAULT CURRENT_TIMESTAMP,
     is_public bool NOT NULL DEFAULT 0
 );
@@ -100,3 +101,14 @@ create table exercise(
     exercise_description varchar(1000) NOT NULL,
     necessary_equipment SET()
 );
+
+
+CREATE USER 'admin'@'localhost';
+GRANT ALL PRIVILEGES ON workout_db.* TO 'admin'@'localhost';
+
+CREATE USER 'read'@'localhost';
+GRANT SELECT ON workout_db.profile TO 'read'@'localhost';
+CREATE USER 'create'@'localhost';
+GRANT INSERT ON workout_db.profile TO 'create'@'localhost';
+CREATE USER 'write'@'localhost';
+GRANT UPDATE ON workout_db.profile TO 'write'@'localhost';
