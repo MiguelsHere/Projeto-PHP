@@ -23,7 +23,7 @@ class Profile
 
     public function readAll()
     {
-        $query = "SELECT user_name, created_in FROM profile WHERE is_public = 1 ORDER BY created_at DESC";
+        $query = "SELECT user_name, created_at FROM profile WHERE is_public = 1 ORDER BY created_at DESC";
         $stmt = $this->conn->prepare($query);
 
         $stmt->execute();
@@ -34,18 +34,6 @@ class Profile
     //Depois fazer algo com session para os returns
     public function register()
     {
-        if (!isset($this->user_name)) {
-            $this->user_name = '';
-        }
-
-        if (!isset($this->email)) {
-            $this->email = '';
-        }
-
-        if (!isset($this->password)) {
-            $this->password = '';
-        }
-
         $this->user_name = trim($this->user_name);
         $this->email = trim($this->email);
 
@@ -74,11 +62,6 @@ class Profile
 
     public function login()
     {
-        if (!isset($this->user_name)) {
-            $this->user_name = '';
-            $this->email = '';
-        }
-
         $this->user_name = trim($this->user_name);
         $this->email = trim($this->email);
 
@@ -102,10 +85,6 @@ class Profile
 
     public function password_reset() 
     {
-        if (!isset($this->email)) {
-           $this->email = ''; 
-        }
-
         $this->email = trim($this->email);
 
         
