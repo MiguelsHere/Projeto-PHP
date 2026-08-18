@@ -66,7 +66,7 @@ class ProfileController
             $this->profile->email = $_POST['email'] ?? '';
 
             if ($this->profile->password_reset()) {
-                $_SESSION['success']  = 'Se esse email(' . $this->profile->email . ') estiver registado, enviaremos um email para repor a palavra-passe.';
+                $_SESSION['success']  = 'Se esse email(' . htmlspecialchars($this->profile->email) . ') estiver registado, enviaremos um email para repor a palavra-passe.';
                 header("Location: index.php?action=password_reset");
             }
         }
