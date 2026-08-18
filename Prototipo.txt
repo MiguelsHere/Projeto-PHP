@@ -46,6 +46,7 @@ Recomedaçoes da OWASP
     Se o utilisador quer mudar a palavra-passe tem que a inserir primeiro
     Se o utilisador se esqueceu
 
+
 CREATE DATABASE workout_db;
 
 create table profile(
@@ -55,14 +56,11 @@ create table profile(
     email varchar(254) NOT NULL UNIQUE,
     date_birth date,
     gender enum('Female','Male','Other','Not Specified') NOT NULL DEFAULT 'Not Specified',
-    weight_kg DECIMAL(4,1),
-    height_cm DECIMAL(4,1),
+    weight_kg DECIMAL(4,1) UNSIGNED,
+    height_cm DECIMAL(4,1) UNSIGNED,
     equipment SET('Bench', 'Bands', 'Weight Plates', 'Barbell', 'Dumbell', 'Kettlebell', 'Pull-Up Bar', 'Ab Wheel'),
     profile_description varchar(1000),
-    is_certified boolean NOT NULL DEFAULT 0,
-    certification_details varchar(1000),
     is_public boolean NOT NULL DEFAULT 0,
-    is_active boolean NOT NULL DEFAULT 0,
     created_at datetime DEFAULT CURRENT_TIMESTAMP,
     updated_at datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
@@ -72,22 +70,19 @@ create table profile_workout(
     id_profile bigint(10) UNSIGNED NOT NULL,
     id_workout bigint(10) UNSIGNED NOT NULL,
     is_creator boolean NOT NULL DEFAULT 0,
-    rating tinyint(1) UNSIGNED
+    like boolean
 );
 
 create table workout(
     id_workout bigint(10) UNSIGNED PRIMARY KEY AUTO_INCREMENT,
     workout_name varchar(1000) NOT NULL,
     workout_description varchar(1000),
-    muscles_worked SET('Forearms', 'Biceps', 'Triceps', 'Shoulders', 'Back', 'Chest', 'Abs', 'Glutes', 'Quadriceps', 'Hamstrings', 'Calves') NOT NULL,
+    muscles_focus SET('Forearms', 'Biceps', 'Triceps', 'Shoulders', 'Back', 'Chest', 'Abs', 'Glutes', 'Quadriceps', 'Hamstrings', 'Calves') NOT NULL,
     time_needed_min smallint(3) UNSIGNED,
+    is_public bool NOT NULL DEFAULT 0,  
     created_at datetime DEFAULT CURRENT_TIMESTAMP,
-    is_public bool NOT NULL DEFAULT 0
+    updated_at datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
-
-Depois ver:
-goal ENUM('Strength', 'Muscle Building', 'Cardio', 'Flexibility & Mobility', 'HIIT', 'Warm up', 'Cooldown') NOT NULL,
-
 
 create table workout_exercise(
     id_workout_exercise bigint(10) UNSIGNED PRIMARY KEY AUTO_INCREMENT,
@@ -99,9 +94,16 @@ create table exercise(
     id_exercise bigint(10) UNSIGNED PRIMARY KEY AUTO_INCREMENT,
     exercise_name varchar(500) NOT NULL,
     exercise_description varchar(1000) NOT NULL,
-    necessary_equipment SET()
+    muscles_worked SET('Forearms', 'Biceps', 'Triceps', 'Shoulders', 'Back', 'Chest', 'Abs', 'Glutes', 'Quadriceps', 'Hamstrings', 'Calves') NOT NULL,
+    necessary_equipment SET('Bench', 'Bands', 'Weight Plates', 'Barbell', 'Dumbell', 'Kettlebell', 'Pull-Up Bar', 'Ab Wheel'),
 );
 
+Depois ver:
+(tabela workout) goal ENUM('Strength', 'Muscle Building', 'Cardio', 'Flexibility & Mobility', 'HIIT', 'Warm up', 'Cooldown') NOT NULL,
+(tabela profile) 
+is_certified boolean NOT NULL DEFAULT 0,
+certification_details varchar(1000),
+is_active boolean NOT NULL DEFAULT 0,
 
 CREATE USER 'admin'@'localhost';
 GRANT ALL PRIVILEGES ON workout_db.* TO 'admin'@'localhost';

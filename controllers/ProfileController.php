@@ -66,7 +66,8 @@ class ProfileController
             $this->profile->email = $_POST['email'];
 
             if ($this->profile->password_reset()) {
-                header("Location: index.php");
+                $_SESSION['success']  = 'Se esse email estiver registado, enviaremos um email para repor a palavra-passe.';
+                header("Location: index.php=?action=password_reset");
             }
         }
 
@@ -76,7 +77,7 @@ class ProfileController
     public function update_no_auth()
     {
         if ($_POST) {
-            $this->profile->age = $_POST['age'];
+            $this->profile->birth_date = $_POST['birth_date'];
             $this->profile->gender = $_POST['gender'];
             $this->profile->weight = $_POST['weight'];
             $this->profile->height = $_POST['height'];
