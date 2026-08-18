@@ -27,7 +27,7 @@
             <input type="text" name="user_or_email" maxlength="254" required><br>
 
             <label>Palavra-passe:</label><br>
-            <input type="password" name="password" minlength="15" maxlength="64" required><br>
+            <input type="password" name="password" minlength="15" maxlength="64" autocomplete="current-password" required><br>
 
             <button type="submit">Entrar</button>
             <a href="index.php">Cancelar</a>

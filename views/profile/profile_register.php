@@ -24,7 +24,7 @@
         <form action="index.php?action=register" method="post">
 
             <label>Nome do Perfil:</label><br>
-            <input type="text" name="user_name" maxlength="100"  autocomplete="username" required><br>
+            <input type="text" name="user_name" maxlength="50"  autocomplete="username" required><br>
 
             <label>Email:</label><br>
             <input type="email" name="email" maxlength="252" autocomplete="email" required><br>
