@@ -42,6 +42,7 @@ class Profile
 
         $stmt->bindParam(":user_name", $this->user_name);
         $stmt->bindParam(":email", $this->email);
+        
         $stmt->execute();
 
         if ($stmt->rowCount() > 0 | mb_strlen($this->user_name) > 50 | mb_strlen($this->user_name) < 1 | !filter_var($this->email, FILTER_VALIDATE_EMAIL) | mb_strlen($this->email) > 254 | mb_strlen($this->password) > 64 | mb_strlen($this->password) < 15) {
