@@ -57,7 +57,9 @@ class Profile
         $stmt->bindParam(":email", $this->email);
         $stmt->bindParam(":password", $hash);
 
-        return $stmt->execute();
+        $stmt->execute();
+
+        return true;
     }
 
     public function login()
@@ -71,23 +73,35 @@ class Profile
         $stmt->bindParam(":user_name", $this->user_name);
         $stmt->bindParam(":email", $this->email);
 
-        if ($stmt->execute()) {
+        $stmt->execute();
 
-            $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
-            if ($row && password_verify($this->password, $row['password_hash'])) {
+        if ($row && password_verify($this->password, $row['password_hash'])) {
 
-                return true;
-            }
+            return true;
         }
+
         return false;
     }
 
-    public function password_reset() 
+    public function password_reset()
     {
         $this->email = trim($this->email);
 
-        
+        $query = "SELECT email FROM profile WHERE email = :email";
+        $stmt = $this->conn->prepare($query);
+
+        $stmt->bindParam(":email", $this->email);
+
+        $stmt->execute();
+
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($row) {
+        }
+
+        return true;
     }
 
     public function update_no_auth() {}

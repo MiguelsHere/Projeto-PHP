@@ -105,8 +105,8 @@ is_certified boolean NOT NULL DEFAULT 0,
 certification_details varchar(1000),
 is_active boolean NOT NULL DEFAULT 0,
 
-CREATE USER 'admin'@'localhost';
-GRANT ALL PRIVILEGES ON workout_db.* TO 'admin'@'localhost';
+CREATE USER 'admin_workout'@'localhost';
+GRANT ALL PRIVILEGES ON workout_db.* TO 'admin_workout'@'localhost';
 
 CREATE USER 'read'@'localhost';
 GRANT SELECT ON workout_db.profile TO 'read'@'localhost';

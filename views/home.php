@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <nav><a href=""><img src="images/logo.png" alt="Workout Maker"></a> <a href="">Workouts</a> <a href="">Ferramentas</a> <a href="">Perfil</a></nav>
+    <nav><a href=""><img src="images/logo.png" alt="Workout Maker"></a> <a href="" title="Ir para Workouts">Workouts</a> <a href="" title="Ir para Ferramentas">Ferramentas</a> <a href="">Perfil</a></nav>
     <main>
         <h1>Bem-Vindo ao<br>Workout Maker</h1>
         <h2>O que é o Workout maker?</h2>
