@@ -34,7 +34,8 @@ class ProfileController
             $this->profile->password = $_POST['password'] ?? '';
 
             if ($this->profile->register()) {
-                header("Location: index.php");
+                $_SESSION['success'] = '';
+                header("Location: index.php?action=register");
             } else {
                 $_SESSION['error'] = 'Registo Falhou. Email ou nome já existe.';
                 header("Location: index.php?action=register");
