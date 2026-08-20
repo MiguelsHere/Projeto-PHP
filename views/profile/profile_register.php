@@ -16,7 +16,7 @@
         <?php
 
         if (!empty($_SESSION['error'])) {
-            echo "<p>" . $_SESSION['error'] . "</p>";
+            echo "<p>" . htmlspecialchars($_SESSION['error']) . "</p>";
             unset($_SESSION['error']);
         }
 
