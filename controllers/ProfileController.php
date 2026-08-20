@@ -34,7 +34,7 @@ class ProfileController
             $this->profile->password = $_POST['password'] ?? '';
 
             if ($this->profile->register()) {
-                $_SESSION['success'] = 'Um link para ativar a sua conta foi enviado para o email dado('. $this->profile->email .').';
+                $_SESSION['success'] = 'Um link para ativar a sua conta foi enviado para ' . $this->profile->email . '.';
                 header("Location: index.php?action=register");
                 exit;
             } else {
