@@ -20,22 +20,30 @@
             unset($_SESSION['error']);
         }
 
-        ?>
-        <form action="index.php?action=register" method="post">
+        if (empty($_SESSION['success'])) {
+            echo
+
+            "<form action=\"index.php?action=register\" method=\"post\">
 
             <label>Nome do Perfil:</label><br>
-            <input type="text" name="user_name" maxlength="50"  autocomplete="username" required><br>
+            <input type=\"text\" name=\"user_name\" maxlength=\"50\"  autocomplete=\"username\" required><br>
 
             <label>Email:</label><br>
-            <input type="email" name="email" maxlength="252" autocomplete="email" required><br>
+            <input type=\"email\" name=\"email\" maxlength=\"252\" autocomplete=\"email\" required><br>
 
             <label>Palavra-passe:</label><br>
-            <input type="password" name="password" minlength="15" maxlength="64" autocomplete="new-password" required><br>
+            <input type=\"password\" name=\"password\" minlength=\"15\" maxlength=\"64\" autocomplete=\"new-password\" required><br>
 
-            <button type="submit">Criar Perfil</button>
-            <a href="index.php">Cancelar</a>
+            <button type=\"submit\">Criar Perfil</button>
+            <a href=\"index.php\">Cancelar</a>
 
-        </form>
+            </form>";
+        } else {
+            echo "<p>" . $_SESSION['success'] . "</p>";
+            unset($_SESSION['success']);
+        }
+        ?>
+
     </main>
 
     <footer>
