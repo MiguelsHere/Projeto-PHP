@@ -2,6 +2,7 @@
 session_start();
 
 include_once 'controllers/ProfileController.php';
+include_once 'controllers/WorkoutController.php';
 
 $controller = new ProfileController();
 
