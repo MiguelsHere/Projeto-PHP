@@ -39,7 +39,7 @@
 
             </form>";
         } else {
-            echo "<p>" . $_SESSION['success'] . "</p>";
+            echo "<p>" . htmlspecialchars($_SESSION['success']) . "</p>";
             unset($_SESSION['success']);
         }
         ?>
