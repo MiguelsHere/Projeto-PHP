@@ -4,6 +4,7 @@ class Profile
 {
     private $conn;
 
+    public $id;
     public $user_name;
     public $password;
     public $email;
@@ -68,7 +69,7 @@ class Profile
         $this->user_name = trim($this->user_name);
         $this->email = trim($this->email);
 
-        $query = "SELECT password_hash FROM profile WHERE user_name = :user_name OR email = :email";
+        $query = "SELECT id_profile, password_hash FROM profile WHERE (user_name = :user_name OR email = :email) and is_validated = 1";
         $stmt = $this->conn->prepare($query);
 
         $stmt->bindParam(":user_name", $this->user_name);
@@ -79,7 +80,8 @@ class Profile
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
         if ($row && password_verify($this->password, $row['password_hash'])) {
-
+            session_regenerate_id(true);
+            $_SESSION['id'] = $row['id_profile'];
             return true;
         }
 
