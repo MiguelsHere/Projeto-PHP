@@ -11,7 +11,19 @@
 </head>
 
 <body>
-    <nav><a href=""><img src="images/logo.png" alt="Workout Maker"></a> <a href="" title="Ir para Workouts">Workouts</a> <a href="" title="Ir para Ferramentas">Ferramentas</a> <a href="">Perfil</a></nav>
+    <?php
+
+    if (empty($_SESSION['id'])) {
+
+        echo
+        "<nav><a href=\"index.php?action=home\"><img src=\"images/logo.png\" alt=\"Workout Maker\"></a> <a href=\" \" title=\"Ir para Workouts\">Workouts</a> <a href=\" \" title=\"Ir para Ferramentas\">Ferramentas</a> <a href=\"index.php?action=login.php\">Login</a>/<a href=\"index.php?action=register.php\">Register</a></nav>";
+    } else {
+
+        echo
+        "<nav><a href=\"index.php?action=home\"><img src=\"images/logo.png\" alt=\"Workout Maker\"></a> <a href=\" \" title=\"Ir para Workouts\">Workouts</a> <a href=\" \" title=\"Ir para Ferramentas\">Ferramentas</a> <a href=\" \">Perfil</a></nav>";
+    }
+
+    ?>
     <main>
         <h1>Bem-Vindo ao<br>Workout Maker</h1>
         <h2>O que é o Workout maker?</h2>
