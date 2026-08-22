@@ -16,11 +16,11 @@
     if (empty($_SESSION['id'])) {
 
         echo
-        "<nav><a href=\"index.php?action=home\"><img src=\"images/logo.png\" alt=\"Workout Maker\"></a> <a href=\" \" title=\"Ir para Workouts\">Workouts</a> <a href=\" \" title=\"Ir para Ferramentas\">Ferramentas</a> <a href=\"index.php?action=login.php\">Login</a>/<a href=\"index.php?action=register.php\">Register</a></nav>";
+        "<nav><a href=\"index.php?action=home\" title=\"Ir para pagina inicial\"><img src=\"images/logo.png\" alt=\"Workout Maker\"></a> <a href=\" \" title=\"Ir para pagina de Workouts\">Workouts</a> <a href=\" \" title=\"Ir para pagina de Ferramentas\">Ferramentas</a> <a href=\"index.php?action=login.php\" title=\"Ir para pagina de login\">Entrar</a>/<a href=\"index.php?action=register.php\" title=\"Ir para pagina de registo\">Registar</a></nav>";
     } else {
 
         echo
-        "<nav><a href=\"index.php?action=home\"><img src=\"images/logo.png\" alt=\"Workout Maker\"></a> <a href=\" \" title=\"Ir para Workouts\">Workouts</a> <a href=\" \" title=\"Ir para Ferramentas\">Ferramentas</a> <a href=\" \">Perfil</a></nav>";
+        "<nav><a href=\"index.php?action=home\" title=\"Ir para pagina inicial\"><img src=\"images/logo.png\" alt=\"Workout Maker\"></a> <a href=\" \" title=\"Ir para pagina de Workouts\">Workouts</a> <a href=\" \" title=\"Ir para pagina de Ferramentas\">Ferramentas</a> <a href=\" \" title=\"Ir para pagina de perfil\">Perfil</a>/<a href=\"\">Sair</a></nav>";
     }
 
     ?>
