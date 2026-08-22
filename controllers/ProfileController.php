@@ -29,9 +29,9 @@ class ProfileController
     public function register()
     {
         if ($_POST) {
-            $this->profile->user_name = $_POST['user_name'] ?? '';
-            $this->profile->email = $_POST['email'] ?? '';
-            $this->profile->password = $_POST['password'] ?? '';
+            $this->profile->user_name = (string) $_POST['user_name'] ?? '';
+            $this->profile->email = (string) $_POST['email'] ?? '';
+            $this->profile->password = (string) $_POST['password'] ?? '';
 
             if ($this->profile->register()) {
                 $_SESSION['success'] = 'Um link para ativar a sua conta foi enviado para ' . $this->profile->email . '.';
@@ -49,9 +49,9 @@ class ProfileController
     public function login()
     {
         if ($_POST) {
-            $this->profile->user_name = $_POST['user_or_email'] ?? '';
-            $this->profile->email = $_POST['user_or_email'] ?? '';
-            $this->profile->password = $_POST['password'] ?? '';
+            $this->profile->user_name = (string) $_POST['user_or_email'] ?? '';
+            $this->profile->email = (string) $_POST['user_or_email'] ?? '';
+            $this->profile->password = (string) $_POST['password'] ?? '';
 
             if ($this->profile->login()) {
                 header("Location: index.php");
@@ -68,7 +68,7 @@ class ProfileController
     public function password_reset() {
 
         if ($_POST) {
-            $this->profile->email = $_POST['email'] ?? '';
+            $this->profile->email = (string) $_POST['email'] ?? '';
 
             if ($this->profile->password_reset()) {
                 $_SESSION['success']  = 'Se esse email(' . $this->profile->email . ') estiver registado, enviaremos um email para repor a palavra-passe.';
@@ -83,13 +83,13 @@ class ProfileController
     public function update_no_auth()
     {
         if ($_POST) {
-            $this->profile->birth_date = $_POST['birth_date'] ?? '';
-            $this->profile->gender = $_POST['gender'] ?? '';
-            $this->profile->weight = $_POST['weight'] ?? '';
-            $this->profile->height = $_POST['height'] ?? '';
-            $this->profile->equipment = $_POST['equipment'] ?? '';
-            $this->profile->description = $_POST['description'] ?? '';
-            $this->profile->is_public = $_POST['is_public'] ?? '';
+            $this->profile->birth_date = (string) ($_POST['birth_date'] ?? '');
+            $this->profile->gender = (string) ($_POST['gender'] ?? '');
+            $this->profile->weight = (float) ($_POST['weight'] ?? 0);
+            $this->profile->height = (float) ($_POST['height'] ?? 0);
+            $this->profile->equipment = (array) ($_POST['equipment'] ?? []);
+            $this->profile->description = (string) ($_POST['description'] ?? '');
+            $this->profile->is_public = (bool) ($_POST['is_public'] ?? false);
 
             if ($this->profile->update_no_auth()) {
                 header("Location: index.php");
