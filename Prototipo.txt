@@ -62,7 +62,8 @@ create table profile(
     profile_description varchar(1000),
     is_public boolean NOT NULL DEFAULT 0,
     created_at datetime DEFAULT CURRENT_TIMESTAMP,
-    updated_at datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+    updated_at datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    is_validated boolean NOT NULL DEFAULT 0
 );
 
 create table profile_workout(
@@ -79,7 +80,7 @@ create table workout(
     workout_description varchar(1000),
     muscles_focus SET('Forearms', 'Biceps', 'Triceps', 'Shoulders', 'Back', 'Chest', 'Abs', 'Glutes', 'Quadriceps', 'Hamstrings', 'Calves') NOT NULL,
     time_needed_min smallint(3) UNSIGNED,
-    is_public bool NOT NULL DEFAULT 0,  
+    is_public bool NOT NULL,  
     created_at datetime DEFAULT CURRENT_TIMESTAMP,
     updated_at datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
@@ -99,7 +100,8 @@ create table exercise(
 );
 
 Depois ver:
-(tabela workout) goal ENUM('Strength', 'Muscle Building', 'Cardio', 'Flexibility & Mobility', 'HIIT', 'Warm up', 'Cooldown') NOT NULL,
+(tabela workout)
+goal ENUM('Strength', 'Muscle Building', 'Cardio', 'Flexibility & Mobility', 'HIIT', 'Warm up', 'Cooldown') NOT NULL,
 (tabela profile) 
 is_certified boolean NOT NULL DEFAULT 0,
 certification_details varchar(1000),
