@@ -29,9 +29,9 @@ class ProfileController
     public function register()
     {
         if ($_POST) {
-            $this->profile->user_name = (string) $_POST['user_name'] ?? '';
-            $this->profile->email = (string) $_POST['email'] ?? '';
-            $this->profile->password = (string) $_POST['password'] ?? '';
+            $this->profile->user_name = (string) ($_POST['user_name'] ?? '');
+            $this->profile->email = (string) ($_POST['email'] ?? '');
+            $this->profile->password = (string) ($_POST['password'] ?? '');
 
             if ($this->profile->register()) {
                 $_SESSION['success'] = 'Um link para ativar a sua conta foi enviado para ' . $this->profile->email . '.';
@@ -49,9 +49,9 @@ class ProfileController
     public function login()
     {
         if ($_POST) {
-            $this->profile->user_name = (string) $_POST['user_or_email'] ?? '';
-            $this->profile->email = (string) $_POST['user_or_email'] ?? '';
-            $this->profile->password = (string) $_POST['password'] ?? '';
+            $this->profile->user_name = (string) ($_POST['user_or_email'] ?? '');
+            $this->profile->email = (string) ($_POST['user_or_email'] ?? '');
+            $this->profile->password = (string) ($_POST['password'] ?? '');
 
             if ($this->profile->login()) {
                 header("Location: index.php");
@@ -65,10 +65,11 @@ class ProfileController
         include 'views/profile/profile_login.php';
     }
 
-    public function password_reset() {
+    public function password_reset()
+    {
 
         if ($_POST) {
-            $this->profile->email = (string) $_POST['email'] ?? '';
+            $this->profile->email = (string) ($_POST['email'] ?? '');
 
             if ($this->profile->password_reset()) {
                 $_SESSION['success']  = 'Se esse email(' . $this->profile->email . ') estiver registado, enviaremos um email para repor a palavra-passe.';
