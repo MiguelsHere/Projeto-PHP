@@ -34,11 +34,9 @@ class ProfileController
             $this->profile->password = (string) ($_POST['password'] ?? '');
 
             if ($this->profile->register()) {
-                $_SESSION['success'] = 'Um link para ativar a sua conta foi enviado para ' . $this->profile->email . '.';
                 header("Location: index.php?action=register");
                 exit;
             } else {
-                $_SESSION['error'] = 'Registo Falhou. Email ou nome já existe.';
                 header("Location: index.php?action=register");
                 exit;
             }
@@ -57,7 +55,6 @@ class ProfileController
                 header("Location: index.php");
                 exit;
             } else {
-                $_SESSION['error'] = 'Login Falhou. Tente Novamente.';
                 header("Location: index.php?action=login");
                 exit;
             }
@@ -72,7 +69,6 @@ class ProfileController
             $this->profile->email = (string) ($_POST['email'] ?? '');
 
             if ($this->profile->password_reset()) {
-                $_SESSION['success']  = 'Se esse email(' . $this->profile->email . ') estiver registado, enviaremos um email para repor a palavra-passe.';
                 header("Location: index.php?action=password_reset");
                 exit;
             }
@@ -84,6 +80,7 @@ class ProfileController
     public function update_no_auth()
     {
         if ($_POST) {
+            $this->profile->id = (int) ($_SESSION['id'] ?? 0);
             $this->profile->birth_date = (string) ($_POST['birth_date'] ?? '');
             $this->profile->gender = (string) ($_POST['gender'] ?? '');
             $this->profile->weight = (float) ($_POST['weight'] ?? 0);

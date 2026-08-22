@@ -24,7 +24,7 @@ class Profile
 
     public function readAll()
     {
-        $query = "SELECT user_name, created_at FROM profile WHERE is_public = 1 ORDER BY created_at DESC";
+        $query = "SELECT user_name, created_at FROM profile WHERE is_public = 1 and is_validated = 1 ORDER BY created_at DESC";
         $stmt = $this->conn->prepare($query);
 
         $stmt->execute();
@@ -43,10 +43,11 @@ class Profile
 
         $stmt->bindParam(":user_name", $this->user_name);
         $stmt->bindParam(":email", $this->email);
-        
+
         $stmt->execute();
 
         if ($stmt->rowCount() > 0 | mb_strlen($this->user_name) > 50 | mb_strlen($this->user_name) < 1 | !filter_var($this->email, FILTER_VALIDATE_EMAIL) | mb_strlen($this->email) > 254 | mb_strlen($this->password) > 64 | mb_strlen($this->password) < 15) {
+            $_SESSION['error'] = 'Registo Falhou. Email ou nome já existe.';
             return false;
         }
 
@@ -61,6 +62,7 @@ class Profile
 
         $stmt->execute();
 
+        $_SESSION['success'] = 'Um link para ativar a sua conta foi enviado para ' . $this->email . '.';
         return true;
     }
 
@@ -84,7 +86,7 @@ class Profile
             $_SESSION['id'] = $row['id_profile'];
             return true;
         }
-
+        $_SESSION['error'] = 'Login Falhou. Tente Novamente.';
         return false;
     }
 
@@ -104,6 +106,7 @@ class Profile
         if ($row) {
         }
 
+        $_SESSION['success']  = 'Se esse email(' . $this->email . ') estiver registado, enviaremos um email para repor a palavra-passe.';
         return true;
     }
 
