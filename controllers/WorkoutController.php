@@ -17,11 +17,11 @@ class WorkoutController
     function create_workout()
     {
         if ($_POST) {
-            $this->workout->workout_name = $_POST['workout_name'] ?? '';
-            $this->workout->workout_description = $_POST['workout_description'] ?? '';
-            $this->workout->muscle_focus = $_POST['muscle_focus'] ?? '';
-            $this->workout->time_needed_min = $_POST['time_needed_min'] ?? '';
-            $this->workout->is_public = $_POST['is_public'] ?? '';
+            $this->workout->workout_name = (string) ($_POST['workout_name'] ?? '');
+            $this->workout->workout_description = (string) ($_POST['workout_description'] ?? '');
+            $this->workout->muscle_focus = (array) ($_POST['muscle_focus'] ?? []);
+            $this->workout->time_needed_min = (int) ($_POST['time_needed_min'] ?? 0);
+            $this->workout->is_public = (bool) ($_POST['is_public'] ?? false);
         }
     }
 
